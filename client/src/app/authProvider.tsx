@@ -45,15 +45,15 @@ const AuthProvider = ({ children }: any) => {
   return (
     <div>
       <Authenticator formFields={formFields}>
-        {({ user }: any) =>
-          user ? (
+        {({ user }: any) => {
+          return user ? (
             <div>{children}</div>
           ) : (
             <div>
               <h1>Please sign in below:</h1>
             </div>
-          )
-        }
+          );
+        }}
       </Authenticator>
     </div>
   );
